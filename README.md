@@ -1,2 +1,15 @@
 # tweeterham
-A #Twitter Online and Offline Marketing analytical app for #Street teams #Billboards #Wrappedcars #eventpromotion (Moblie Phone, PC) * #TwitterHam
+
+A Twitter Online and Offline Marketing analytical app for Street teams Billboards Wrapped cars event promotion (Moblie Phone, Ipad, PC)
+
+This great Twitter app is for marketing companies, products, events and etc.  
+
+For Example:  An  AC Unit company logs its info into the Tweeterham app   
+
+Tweeterham creates a Twitter Ai bot that searches for a particular location tweets about air-condition units tweets like.  
+
+Example my air condition stopped working or doesn't work. This will trigger a tweet to the user asking if they are wanting help the unit. 
+
+If so then the bot will send payment links for an appointment.After payment verification a direct message to AC tech with the address of the new customer. 
+
+Schedule times and dates. Tweeterham bot will also create marketing ads and campaigns for AC company sending campaign tweets to billboard and radio and Tv Ads News networks etc. 
