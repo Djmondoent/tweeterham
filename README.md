@@ -8,7 +8,7 @@ For Example:  An  AC Unit company logs its info into the Tweeterham app
 
 Tweeterham creates a Twitter Ai bot that searches for a particular location tweets about air-condition units tweets like.  
 
-Example my air condition stopped working or doesn't work. This will trigger a tweet to the user asking if they are wanting help the unit. 
+Example my air condition stopped working or doesn't work. This will trigger a tweet to the user asking if they are wanting help with the unit. 
 
 If so then the bot will send payment links for an appointment.After payment verification a direct message to AC tech with the address of the new customer. 
 
