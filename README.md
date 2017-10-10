@@ -1,4 +1,4 @@
-Copyright 2010-2017 @djmondoent Djmondoent@tweeterham.com  Twitterham Marketing llc 
+()Copyright 2010-2017 @djmondoent Djmondoent@tweeterham.com  Tweeterham Marketing llc 
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -19,7 +19,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 "author": "Djmondoent info@tweeterham.com",
-  "license": " copyright twitterham marketing llc ",
+  "license": " copyright tweeterham marketing llc ",
   "dependencies": {
     "botmaster": "^3.1.3",
     "docker": "^1.0.0",
