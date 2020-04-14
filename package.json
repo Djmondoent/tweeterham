@@ -1,0 +1,21 @@
+{
+  "name": "tweeterham",
+  "version": "1.0.0",
+  "description": "Great Twitter Marketing App",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Tweeterham",
+    "marketing",
+    "llc"
+  ],
+  "author": "@DJMONDOENT",
+  "license": "MIT",
+  "dependencies": {
+    "blockchain.info": "^2.12.1",
+    "login-with-twitter": "^1.2.2",
+    "twit": "^2.2.11"
+  }
+}
