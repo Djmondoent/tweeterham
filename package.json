@@ -1,21 +1,42 @@
 {
+  "//1": "describes your app and its dependencies",
+  "//2": "https://docs.npmjs.com/files/package.json",
+  "//3": "updating this file will download and update your packages",
   "name": "tweeterham",
-  "version": "1.0.0",
-  "description": "Great Twitter Marketing App",
-  "main": "index.js",
+  "version": "4.5.3",
+  "description": "A simple Node app built on Express, instantly up and running.",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js"
   },
-  "keywords": [
-    "Tweeterham",
-    "marketing",
-    "llc"
-  ],
-  "author": "@DJMONDOENT",
-  "license": "MIT",
   "dependencies": {
-    "blockchain.info": "^2.12.1",
+    "blockchain": "^1.0.6",
+    "bluebird": "^3.7.2",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "express-sessions": "^1.0.6",
     "login-with-twitter": "^1.2.2",
-    "twit": "^2.2.11"
-  }
+    "mongodb": "^3.5.6",
+    "mysql": "^2.18.1",
+    "node-twitter-api": "^1.8.0",
+    "passport": "^0.4.1",
+    "passport-twitter": "^1.0.4",
+    "sessions": "^0.0.2",
+    "twit": "^2.2.11",
+    "twitter": "^1.7.1"
+  },
+  "engines": {
+    "node": "12.x"
+  },
+  "repository": {
+    "url": "https://glitch.com/edit/#!/hello-express"
+  },
+  "license": "MIT",
+  "keywords": [
+    "node",
+    "glitch",
+    "express"
+  ],
+  "devDependencies": {},
+  "author": "@Djmondoent"
 }

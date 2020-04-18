@@ -1,0 +1,216 @@
+/* this file is loaded by index.html and styles the page */
+
+style.css
+{
+  box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+  font-family:rem; 'segoe UI' Tahoma, Geneva, Verdana,
+  sas-serif;
+  font-size:lrem;
+line-higt:1.5;
+  color:#333;
+	ovrflow-:hidden;
+
+}
+
+.v-header
+	height: 100vh;
+	display:flex;
+	align-items:center;
+  color:#fff;
+
+}
+
+
+.contaniner{
+  max-width:960px;
+  padding-left:lerm;
+  padding-right:lrem;
+  margin:auto;
+  text-allign: center;
+  
+  
+}
+
+
+.fullscreen-video-wrap{
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: scale(1.57);
+  transform-origin: center;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fullscreen-video-wrap video{
+  min-width:100%;
+  min-height:100%:
+  
+}
+.header-overlay{
+  height:100vh;
+  width:100vw;
+  position:absolute;
+  top:0;
+  left:0;
+  background:#225470;
+  z-index:1;
+  opacity;0.85; 
+}
+
+
+.header-content{
+  z-index;2; 
+}
+
+.header-content h1{
+  font-size:150px;
+  margin-bottom:0;
+  
+}
+
+.header-content p{
+  font-size:50px;
+  margin-bottom:0;
+}
+
+.header-content p{
+	font-size:1.rem;
+  display:block;
+  padding-bottom:2rem;
+}
+.btn{
+  background:#34b3a0;
+  color:#fff;
+  font-size:1.2rem;
+  text-decoration: none;
+}
+
+@media(max-width:960px){
+  .container{
+padding-right:3rem;
+padding-left:3rem;
+}
+  
+
+}
+
+
+f
+
+
+@import url('https://fonts.googleapis.com/css?family=raleway');
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+html, body {
+    margin: 0;
+	padding: 0;
+	height: 200;
+	width: 200;
+
+
+}
+
+
+.intro {
+	height: 121%;
+	width:  121%;
+	margin: auto;
+	background: url("");
+	display: table;
+	top: 0;
+	background-attachment-size: cover;
+	}
+	
+.intro .inner {
+	display: table-cell;
+	vertical-align: center;
+	width: 100%;
+	max-width: none;
+	text-align: center;
+}
+.content {
+	max-width: 100px;
+	margin: 0 auto;
+	text-align: center;
+
+}
+.content h1 {
+	font-family: 'raleway', sans-serif;
+	color: #35e;
+	text-shadow: 0px 0px 300px #;
+	font-size: 500%;
+	text-align: center;
+
+	{
+	}
+.content: h2 {
+	font-family: 'raleway', sans-serif;
+	color: #35e;
+	text-shadow: 0px 0px 300px #;
+	font-size: 500%;
+	text-align:center;
+
+
+	} 	}
+
+}
+
+.btn {
+	border-radius: 10px;
+	font-family: 'Oswald', sans-serif;
+	color: #35e;
+	font-size: 235%;
+	padding: 10px 20px;
+	border: solid #35e 3px;
+	text-transform: uppercase;
+	text-decoration: none;
+
+}
+
+.btn:hover {
+	color: #000;
+	border:solid #35e 9px;
+
+}
+p {
+
+	font-size: 260%;
+	line-height: 110%;
+	text-align: center;
+	margin: 3%;
+	font-family: sans-serif;
+}
+
+
+@media screen and (max-width: 1768px) {
+	header #branding,
+	header nav,
+	header nav li{
+		float: none;
+		text-align: center;
+		width: 100%;
+	}
+}
+
+	.content: h1 {
+		font-size: 450%;
+	}
+
+	.btn {
+		font-size: 610%;
+		padding: 177px 115px;
+}
+p
+{
+	font-size: 400%;
+	line-height: 260%;
+
+}
