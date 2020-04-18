@@ -1,28 +1,24 @@
-# hello-express
+Apache License 2.0
 
-A server that serves a webpage, its resources, and some data
+()Copyright 2010-2019 @djmondoent info@tweeterham.com  Tweeterham Marketing llc 
 
-## Your Project
 
-On the front-end,
 
-- Edit `views/index.html` to change the content of the webpage
-- `public/client.js` is the javacript that runs when you load the webpage
-- `public/style.css` is the styles for `views/index.html`
-- Drag in `assets`, like images or music, to add them to your project
 
-On the back-end,
 
-- your app starts at `server.js`
-- add frameworks and packages in `package.json`
-- safely store app secrets in `.env` (nobody can see this but you and people you invite)
 
-Click `Show` in the header to see your app live. Updates to your code will instantly deploy.
+# tweeterham
 
-## Made by [Glitch](https://glitch.com/)
+A Twitter Online and Offline Marketing analytical app for Street teams Billboards Wrapped cars event promotion (Moblie Phone, Ipad, PC)
 
-**Glitch** is the friendly community where you'll build the app of your dreams. Glitch lets you instantly create, remix, edit, and host an app, bot or site, and you can invite collaborators or helpers to simultaneously edit code with you.
+This great Twitter app is for marketing companies, products, events and etc.  
 
-Find out more [about Glitch](https://glitch.com/about).
+For Example:  An  AC Unit company logs its info into the Tweeterham app   
 
-( ᵔ ᴥ ᵔ )
+Tweeterham creates a Twitter Ai bot that searches for a particular location tweets about air-condition units tweets like.  
+
+Example my air condition stopped working or doesn't work. This will trigger a tweet to the user asking if they are wanting help with the unit. 
+
+If so then the bot will send payment links for an appointment.After payment verification a direct message to AC tech with the address of the new customer. 
+
+Schedule times and dates. Tweeterham bot will also create marketing ads and campaigns for AC company sending campaign tweets to billboard and radio and Tv Ads News networks etc. 
