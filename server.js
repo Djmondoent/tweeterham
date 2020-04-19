@@ -3,6 +3,8 @@ var mysql = require('mysql');
 var session = require("express-session");
 var passport = require("passport");
 var TwitterStrategy = require("passport-twitter").Strategy;
+var cookieParser = require('cookie-parser');
+var mongodb = require('mongodb');
 
 const app = express();
 
@@ -11,10 +13,17 @@ app.use(express.json());
 app.use(session({ secret: "whatever", resave: true, saveUninitialized: true }));
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(cookieParser()) 
 
-app.get("/", (request, response) => {
-  response.sendFile(__dirname + "/views/index.html");
+
+
+//static web site 
+
+app.get("/", (req, res) => {
+  res.sendFile(__dirname + "/views/index.html");
 });
+
+
 
 const listener = app.listen(process.env.PORT, () => {
   console.log("Your app is listening on port " + listener.address().port);
@@ -49,16 +58,36 @@ passport.deserializeUser(function(obj, done) {
 
 
 
-app.get("/twitter", passport.authenticate("twitter"));
+app.get("/twitter",(req,res,next) => {
+  res.cookie('usertype', req.query.user, {
+    httpOnly: true, // http only, prevents JavaScript cookie access
+    secure: true // cookie must be sent over https / ssl
+});
+  
+  next();
+} ,passport.authenticate("twitter"));
+
+
+// app.get("/twitter", passport.authenticate("twitter"));
 
 app.get("/twitter/return",
   passport.authenticate("twitter", { failureRedirect: "/login" }),
   (req, res) => {
-    res.sendFile(__dirname + "/views/tweeterhamlogin.html");
+    if(req.cookies['usertype'] == 'pub'){
+      res.sendFile(__dirname + "/views/publisherusers.html");
+    }else if(req.cookies['usertype'] == 'adv'){
+      res.sendFile(__dirname + "/views/advertiserusers.html");
+      
+      
+      
+      
+      
+      
+    }
   }
 );
 
-
+///
 // app.get('/twitter/return',passport.authenticate('twitter',{ failureRedirect: '/login' }), (req,res) => {
 //   res.json(req.headers);
 // });
