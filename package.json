@@ -3,7 +3,7 @@
   "//2": "https://docs.npmjs.com/files/package.json",
   "//3": "updating this file will download and update your packages",
   "name": "tweeterham",
-  "version": "4.8.9",
+  "version": "3.4.9",
   "description": "A simple Node app built on Express, instantly up and running.",
   "main": "server.js",
   "scripts": {
@@ -24,7 +24,9 @@
     "twit": "^2.2.11",
     "twitter": "^1.7.1",
     "cookie-parser": "^1.4.5",
-    "mongodb": "^3.5.5"
+    "mongodb": "^3.5.5",
+    "mongoose": "^5.9.9",
+    "cookie-session": "^1.4.0"
   },
   "engines": {
     "node": "12.x"

@@ -1,24 +1,27 @@
 const express = require("express");
-var mysql = require('mysql');
-var session = require("express-session");
 var passport = require("passport");
 var TwitterStrategy = require("passport-twitter").Strategy;
 var cookieParser = require('cookie-parser');
-var mongodb = require('mongodb');
+var mongoose = require('mongoose');
+const User = require('./mongomodels/user');
+const cookieSession = require('cookie-session');
+
 
 const app = express();
 
 app.use(express.static("public"));
 app.use(express.json());
-app.use(session({ secret: "whatever", resave: true, saveUninitialized: true }));
+app.use(cookieParser());
+app.use(cookieSession({
+  maxAge: 24*60*60*1000,
+  keys: [process.env.cookieKey]
+}));
+
 app.use(passport.initialize());
 app.use(passport.session());
-app.use(cookieParser()) 
 
 
-
-//static web site 
-
+  
 app.get("/", (req, res) => {
   res.sendFile(__dirname + "/views/index.html");
 });
@@ -31,6 +34,13 @@ const listener = app.listen(process.env.PORT, () => {
 
 
 
+mongoose.connect('mongodb+srv://test:uwyftBn7dR1HBEWO@cluster0-rudmp.mongodb.net/test?retryWrites=true&w=majority',{ useNewUrlParser: true,useUnifiedTopology: true } );
+
+mongoose.connection.once('open', function() {
+    console.log('mongodb connection has been made!');
+}).on('error', err => {
+    console.log('monogdb connection err:', err);
+});
 
 
 
@@ -43,32 +53,56 @@ passport.use(
       callbackURL: process.env.callbackURL
     },
     function(token, tokenSecret, profile, done) {
-      return done(null, profile);
+      
+      User.findOne({twitterid: profile.id}).then((currentUser) => {
+        if(currentUser){
+          //found user
+          // console.log('user has been found:',currentUser);
+          done(null, currentUser);
+        }else {
+          // create a new user
+          new User({
+            username:profile.username,
+            twitterid:profile.id,
+            displayName:profile.displayName
+            // profileImage:profile.rofile_image_url
+          }).save().then(newUser => {
+            // console.log('new user has been created:', newUser);
+            done(null, newUser);
+          });
+        }
+      });
+
+    
+
     }
   )
 );
 
-passport.serializeUser(function(user, done) {
+passport.serializeUser((user, done) => {
+  // console.log('user has been serialized:',user.id);
   done(null, user.id);
 });
 
-passport.deserializeUser(function(obj, done) {
-  done(null, obj);
+passport.deserializeUser((id, done) => {
+  // console.log('user id:',id);
+  User.findById(id).then(user => {
+    // console.log('user has been deserialized:',user);
+    done(null, user);
+  });
 });
 
 
 
 app.get("/twitter",(req,res,next) => {
   res.cookie('usertype', req.query.user, {
-    httpOnly: true, // http only, prevents JavaScript cookie access
-    secure: true // cookie must be sent over https / ssl
+    httpOnly: true, 
+    secure: true 
 });
-  
+  // console.log(req.user);
   next();
 } ,passport.authenticate("twitter"));
 
-
-// app.get("/twitter", passport.authenticate("twitter"));
 
 app.get("/twitter/return",
   passport.authenticate("twitter", { failureRedirect: "/login" }),
@@ -77,33 +111,8 @@ app.get("/twitter/return",
       res.sendFile(__dirname + "/views/publisherusers.html");
     }else if(req.cookies['usertype'] == 'adv'){
       res.sendFile(__dirname + "/views/advertiserusers.html");
-      
-      
-      
-      
-      
-      
     }
   }
 );
 
-///
-// app.get('/twitter/return',passport.authenticate('twitter',{ failureRedirect: '/login' }), (req,res) => {
-//   res.json(req.headers);
-// });
-
-/// <h1>Publishers users
-//</h1>
-//  <h2> <a href="https://tweeterham.glitch.me/views/tweeterhamlogin.html" class="twitter-login-button" </a>
-//<img alt="Sign in with Twitter" src="http://Developer.twitter.com/content/dam/developer-twitter/images/sign-in-with-twitter-gray.png" >
-// </h2>
-//<body>
-
-//
-//<h1>Advertiser users </h1>
-//<h3>
-
-//<a href=" "  class="twitter-login-button" >
-//    <img alt="sign in with Twitter" src="http://Developer.twitter.com/content/dam/developer-twitter/images/sign-in-with-twitter-gray.png">
-// </a>
-// </h3>
+ 
