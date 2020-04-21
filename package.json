@@ -3,7 +3,7 @@
   "//2": "https://docs.npmjs.com/files/package.json",
   "//3": "updating this file will download and update your packages",
   "name": "tweeterham",
-  "version": "3.4.9",
+  "version": "5.3.4",
   "description": "A simple Node app built on Express, instantly up and running.",
   "main": "server.js",
   "scripts": {
@@ -12,21 +12,23 @@
   "dependencies": {
     "blockchain": "^1.0.6",
     "bluebird": "^3.7.2",
+    "cookie-parser": "^1.4.5",
+    "cookie-session": "^1.4.0",
+    "ejs": "^3.0.2",
     "express": "^4.17.1",
     "express-session": "^1.17.1",
     "express-sessions": "^1.0.6",
     "login-with-twitter": "^1.2.2",
+    "mongodb": "^3.5.5",
+    "mongoose": "^5.9.9",
     "mysql": "^2.18.1",
     "node-twitter-api": "^1.8.0",
     "passport": "^0.4.1",
     "passport-twitter": "^1.0.4",
     "sessions": "^0.0.2",
+    "textbelt": "^0.0.4",
     "twit": "^2.2.11",
-    "twitter": "^1.7.1",
-    "cookie-parser": "^1.4.5",
-    "mongodb": "^3.5.5",
-    "mongoose": "^5.9.9",
-    "cookie-session": "^1.4.0"
+    "twitter": "^1.7.1"
   },
   "engines": {
     "node": "12.x"
